@@ -40,12 +40,12 @@ class QuickUnion {
     union (x, y) {
         const rootX = this.find(x)
         const rootY = this.find(y)
-        if (this.rank[x] > this.rank[y]) {
-            this.root[x] = rootY
-        } else if (this.rank[x] < this.rank[y]) {
-            this.root[y] = rootX
+        if (this.rank[rootX] > this.rank[rootY]) {
+            this.root[rootX] = rootY
+        } else if (this.rank[rootX] < this.rank[rootY]) {
+            this.root[rootY] = rootX
         } else {
-            this.root[x] = rootY
+            this.root[rootX] = rootY
             this.rank += 1
         }
     }
